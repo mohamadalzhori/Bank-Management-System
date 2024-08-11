@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "BMS.Infrastructure.Grpc.Services";
+
+import "google/protobuf/timestamp.proto";
+
+service Rollback {
+  rpc RollbackTransactions (RollbackRequest) returns (RollbackResponse);
+}
+
+message RollbackRequest {
+  google.protobuf.Timestamp rollbackDate = 1;
+}
+
+message RollbackResponse {
+  // No fields are needed if no data is returned.
+}
