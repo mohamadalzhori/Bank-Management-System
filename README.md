@@ -9,7 +9,7 @@ Follow the steps below to set up and run the Bank Management System on your loca
 Start by cloning the repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/Bank-Management-System.git
+git clone https://github.com/mohamadalzhori/Bank-Management-System.git
 ```
 ### 2. Extract the Data Folder
 After cloning the repository, you'll need to extract the data folder. Ensure that the data directory contains the required subfolders for Keycloak and Postgres.
