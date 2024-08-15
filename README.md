@@ -42,14 +42,14 @@ This command will start the following services:
 - Redis: For caching.
 - Seq: For logging.
 
-4. Run the Application Projects
+### 4. Run the Application Projects
 After the Docker containers are up and running, you need to start each project manually. Follow these steps for each project:
 
 Open your IDE or terminal.
 Navigate to the root directory of each project.
 Run the project using the appropriate commands for your environment (e.g., dotnet run for .NET projects).
 
-5. Verify Setup
+### 5. Verify Setup
 After starting all the services and projects, verify that everything is running correctly:
 
 - Keycloak: Access the Keycloak admin console at http://localhost:8080. Log in using the admin credentials you set in the docker-compose.yml file (admin/admin by default).
