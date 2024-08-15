@@ -1,0 +1,47 @@
+﻿version: '3.8'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: wowpassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:25.0.2
+    container_name: keycloak_container
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    volumes:
+      - ./data/keycloak:/opt/keycloak/data
+    command: start-dev  # This tells Keycloak to start in dev mode
+    
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq_container
+    ports:
+      - "5672:5672"   # RabbitMQ service port
+      - "15672:15672" # RabbitMQ management dashboard
+
+  redis:
+    image: redis:latest
+    container_name: redis_container
+    ports:
+      - "6379:6379"
+
+  seq:
+    image: datalust/seq:latest
+    container_name: seq_container
+    environment:
+      ACCEPT_EULA: Y
+    ports:
+      - "5341:80"

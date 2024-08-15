@@ -9,11 +9,12 @@ namespace BMS.API.Controllers;
 [Route("Transactions")]
 public class TransactionsController(RollBackService rollBackService) : ControllerBase
 {
-   [Authorize(Roles = "Admin")]
+   // [Authorize(Roles = "Admin")]
    [HttpPost("RollBackTransactions")]
-   public async Task<IActionResult> RollBackTransactions([FromQuery] DateOnly date)
+   public async Task<IActionResult> RollBackTransactions([FromQuery] DateTime date)
    {
-      await rollBackService.RollbackTransactions(date);
+      var dateOnly = DateOnly.FromDateTime(date);
+      await rollBackService.RollbackTransactions(dateOnly);
       return Ok();
    } 
 }

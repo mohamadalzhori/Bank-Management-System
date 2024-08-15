@@ -39,6 +39,7 @@ public static class KeycloakConfig
             });
         });
        
+       
         services.AddSingleton<IAuthorizationHandler, BranchRequirementHandler>();
 
         

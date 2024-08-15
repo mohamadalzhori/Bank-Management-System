@@ -35,6 +35,9 @@ public class RabbitMqConsumer : BackgroundService
         _connection = factory.CreateConnection();
         _channel = _connection.CreateModel();
 
+        // Declare the exchange
+        _channel.ExchangeDeclare(exchange: exchangeName, type: ExchangeType.Fanout, durable: true, autoDelete: false, arguments: null);
+
         // Declare a queue
         _channel.QueueDeclare(queue: _queueName, durable: true, exclusive: false, autoDelete: false, arguments: null);
 

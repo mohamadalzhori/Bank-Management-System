@@ -1,6 +1,5 @@
 ﻿using BMS.Infrastructure.Grpc.Services;
 using BMS.Infrastructure.RabbitMQ;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

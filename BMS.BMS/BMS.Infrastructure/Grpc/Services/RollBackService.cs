@@ -20,9 +20,9 @@ public class RollBackService
 
     public async Task RollbackTransactions(DateOnly date)
     {
-        // Convert DateOnly to DateTime
-        var dateTime = date.ToDateTime(TimeOnly.MinValue);
-    
+        // Convert DateOnly to DateTime in UTC
+        var dateTime = date.ToDateTime(TimeOnly.MinValue, DateTimeKind.Utc); 
+        
         // Convert DateTime to Google Protobuf Timestamp
         var timestamp = new Timestamp
         {

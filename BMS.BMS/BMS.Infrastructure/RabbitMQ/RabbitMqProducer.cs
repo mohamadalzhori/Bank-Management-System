@@ -17,8 +17,8 @@ public class RabbitMqProducer(IConfiguration configuration) : IRabbitMqProducer
         using var channel = connection.CreateModel();
 
         // Declare a fanout exchange
-        channel.ExchangeDeclare(exchange: exchangeName, type: ExchangeType.Fanout);
-
+        channel.ExchangeDeclare(exchange: exchangeName, type: ExchangeType.Fanout, durable: true, autoDelete: false, arguments: null);
+        
         // Serialize the message
         var body = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(message));
        
