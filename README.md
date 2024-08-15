@@ -1,5 +1,6 @@
 # Bank Management System
 
+Architecture Layout and Planning Overview: [Drawio Sketch](https://drive.google.com/file/d/1c2hQbYKuiETfPsRRWvzG2IGT6YBvaC83/view?usp=sharing)
 ## Project Setup Instructions
 
 Follow the steps below to set up and run the Bank Management System on your local machine.
